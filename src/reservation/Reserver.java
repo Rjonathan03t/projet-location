@@ -56,7 +56,7 @@ public class Reserver {
         int numero = scanner.nextInt();
 
         if (numero < 0 || numero >= listALouer.size()) {
-            System.out.println("Erreur : index invalide.");
+            System.out.println("Erreur : numero invalide.");
             return;
         }
 

@@ -50,4 +50,47 @@ public class Reserver {
             System.out.println(i + ": " + item.nom + " - " + etat);
         }
     }
+    private void reserverObjet() {
+        afficherObjets();
+        System.out.print("Quel objet voulez-vous louer ? (entrez le numéro de l'item) : ");
+        int numero = scanner.nextInt();
+
+        if (numero < 0 || numero >= listALouer.size()) {
+            System.out.println("Erreur : index invalide.");
+            return;
+        }
+
+        OnPeutLouer objet = listALouer.get(numero);
+
+        if (!objet.etat && objet.duree > 0) {
+            System.out.println();
+            System.out.println("Desolé cet article est déjà réservé.");
+            return;
+        }
+
+        System.out.print("Pour combien de jours ? : ");
+        int duree = scanner.nextInt();
+
+        if (duree < 1) {
+            System.out.println("La durée minimale est de 1 jour.");
+            return;
+        }
+
+        objet.duree = duree;
+        objet.etat = false;
+        System.out.println("Vous avez réservé '" + objet.nom + "' pour " + duree + " jour(s).");
+    }
+
+    private void passerUnJour() {
+        System.out.println("\nUn jour s'est écoulé...");
+        for (OnPeutLouer item : listALouer) {
+            if (!item.etat && item.duree > 0) {
+                item.duree--;
+                if (item.duree == 0) {
+                    item.etat = true;
+                    System.out.println(item.nom + " est maintenant disponible !");
+                }
+            }
+        }
+    }
 }

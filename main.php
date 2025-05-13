@@ -24,7 +24,7 @@ function lireEntree($message) {
     return trim(fgets(STDIN));
 }
 
-// Initialisation des objets
+
 $objets = [
     new Assiette("Assiette"),
     new Voiture("Voiture"),

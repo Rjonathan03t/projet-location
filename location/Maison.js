@@ -1,4 +1,4 @@
-import OnPeutLouer from './OnPeutLouer';
+const OnPeutLouer = require('./OnPeutLouer');
 
 class Maison extends OnPeutLouer {
     constructor(nom) {
@@ -6,4 +6,4 @@ class Maison extends OnPeutLouer {
     }
 }
 
-export default Maison;
+module.exports = Maison;

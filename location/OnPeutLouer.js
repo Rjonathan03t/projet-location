@@ -6,4 +6,4 @@ class OnPeutLouer {
     }
 }
 
-export default OnPeutLouer;
+module.exports = OnPeutLouer;

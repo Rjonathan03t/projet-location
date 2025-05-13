@@ -1,4 +1,4 @@
-import OnPeutLouer from './OnPeutLouer';
+const OnPeutLouer = require('./OnPeutLouer');
 
 class Assiette extends OnPeutLouer {
     constructor(nom) {
@@ -6,4 +6,4 @@ class Assiette extends OnPeutLouer {
     }
 }
 
-export default Assiette;
+module.exports = Assiette;
